@@ -179,5 +179,5 @@ pred = np.argmax(model_pred,axis=1)
 score = metrics.accuracy_score(y_test, pred)
 print('Accuracy: {}'.format(score))
 
-r = pd.DataFrame( { 'y': y_test, "pred": pred})
-r.to_csv("output.csv")
+op = pd.DataFrame( { 'y': y_test, "pred": pred})
+op.to_csv("output.csv")
