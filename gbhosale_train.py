@@ -31,7 +31,6 @@ def encode_text_index(df, name):
     df[name] = le.fit_transform(df[name])
     return le.classes_
 
-# Nicely formatted time string
 def hms_string(sec_elapsed):
     h = int(sec_elapsed / (60 * 60))
     m = int((sec_elapsed % (60 * 60)) / 60)
@@ -80,7 +79,6 @@ for datapoint in train_yaml:
                     classname = "off"
                 else:
                     print(datapoint["boxes"][i]['label'])
-                    print("something wrong")
                 dict1 = {'path': pathname, 'x_min': xmin, 'y_min': ymin, 'x_max': xmax, 'y_max': ymax,
                          'target': classname}
                 train_df = train_df.append(dict1, ignore_index=True)
@@ -156,7 +154,7 @@ model.add(Dropout(0.5))
 model.add(Dense(NUM_CLASSES,activation='softmax'))
 
 model.compile(loss=keras.losses.categorical_crossentropy,
-              optimizer= 'adam',
+              optimizer= 'SGD',
               metrics=['accuracy'])
 model.summary()
 
