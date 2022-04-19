@@ -6,3 +6,6 @@ Forgot to add them.
 
  
 <img src="https://raw.githubusercontent.com/grvbhosale/aiauto/main/accuracy.jpeg" alt="alt text" width="128" height="128">
+
+Test Accuracy - approx 70%
+Simple CNN trained on BOSCH tracffic light dataset.
